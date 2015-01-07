@@ -7,6 +7,7 @@ This project rocks and uses MIT-LICENSE.
 1: add gem to your gemfile.
 
 gem 'tin-alipay', '2.4.3' 
+
 bundle 
 
 2: Config your alipay.
@@ -46,6 +47,7 @@ If you use MOBILE url:
 4: To verify return params of the pc&mobile.
 
 PC: TinAlipay::Notify.verify?(return_params)
+
 MOBILE: TinAlipay::Notify::Mobile.verify?(return_params)
 
 
