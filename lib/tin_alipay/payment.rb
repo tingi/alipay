@@ -2,26 +2,28 @@ require 'open-uri'
 module TinAlipay
   module Payment
     GATEWAY_PC_URL = 'https://mapi.alipay.com/gateway.do'
-    OPTIONS_PC_KEYS = %w( service partner _input_charset out_trade_no subject payment_type logistics_type logistics_fee logistics_payment seller_email price quantity )
+    OPTIONS_PC_KEYS = %w( service partner _input_charset out_trade_no subject payment_type seller_email )
     GATEWAY_MOBILE_URL = 'https://wappaygw.alipay.com/service/rest.htm'
     OPTIONS_MOBILE_KEYS = %w( subject out_trade_no total_fee seller_account_name call_back_url )
     REQUIRED_MOBILE_KEYS = %w( service format v partner req_id req_data )
     EXECUTE_MOBILE_KEYS = %w( service format v partner )
+    CREATE_DIRECT_PAY_BY_USER_REQUIRED_OPTIONS = 
 
     def self.create_direct_pay_pc_url(options = {})
-      options = {
-        'service'        => 'trade_create_by_buyer',
+     options = {
+        'service'        => 'create_direct_pay_by_user',
         '_input_charset' => 'utf-8',
         'partner'        => TinAlipay.pid,
         'seller_email'   => TinAlipay.seller_email,
-        'payment_type'   => '1',
-        'logistics_type'    => 'DIRECT',
-        'logistics_fee'     => '0',
-        'logistics_payment' => 'SELLER_PAY',
-        'quantity'          => 1,
-        'discount'          => '0'
+        'payment_type'   => '1'
       }.merge(new_hash(options))
+
       check_options_keys(options, OPTIONS_PC_KEYS)
+
+      if options['total_fee'].nil? and (options['price'].nil? || options['quantity'].nil?)
+        warn("Ailpay Warn: total_fee or (price && quantiry) must have one")
+      end
+
       "#{GATEWAY_PC_URL}?#{params_pc_str(options)}"
     end
 

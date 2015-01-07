@@ -6,7 +6,7 @@ This project rocks and uses MIT-LICENSE.
 
 1: add gem to your gemfile.
 
-gem 'tin-alipay', '2.4.1' 
+gem 'tin-alipay', '2.4.2' 
 bundle 
 
 2: Config your alipay.
@@ -23,8 +23,8 @@ If you use PC url:
       :subject           => 'your subject',
       :price             => '0.01',
       :quantity          => 1,
-      :return_url        => 'http://www.yoursite.com/call_back' ,
-      :notify_url        => 'http://www.yoursite.com/notify_call_back'
+      :return_url        => 'http://www.xxxxx.com/call_back' ,
+      :notify_url        => 'http://www.xxxxx.com/notify_call_back'
     }
 
 #you can directly redirect_to this url
@@ -36,8 +36,8 @@ If you use MOBILE url:
         :out_trade_no  => '1',
         :subject       => 'your subject',
         :total_fee     => '0.01',
-        :notify_url    => "http://www.yoursite.com/notify_call_back",
-        :call_back_url => 'http://www.yoursite.com/call_back'
+        :notify_url    => "http://www.xxxxx.com/notify_call_back",
+        :call_back_url => 'http://www.xxxxx.com/call_back'
         }}
 
 #you can directly redirect_to this url
