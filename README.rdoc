@@ -6,7 +6,7 @@ This project rocks and uses MIT-LICENSE.
 
 1: add gem to your gemfile.
 
-gem 'tin-alipay', '2.4.2' 
+gem 'tin-alipay', '2.4.3' 
 bundle 
 
 2: Config your alipay.

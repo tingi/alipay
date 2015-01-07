@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tin_alipay (2.4.1)
+    tin_alipay (2.4.3)
       fakeweb
       rails (~> 4.1.8)
 
