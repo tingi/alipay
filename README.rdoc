@@ -53,8 +53,11 @@ If you use MOBILE url:
 	TinAlipay::Notify.verify?(return_params)
 
 	MOBILE:
-	 
+
+
 	TinAlipay::Notify::Mobile.verify?(return_params)
+
+
 
 
 #if you have some troble when use this gem,to email me.
