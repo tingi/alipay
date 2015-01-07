@@ -30,7 +30,7 @@ If you use PC url:
 
 #you can directly redirect_to this url
 
-"TinAlipay::Payment.create_direct_pay_pc_url(options)" 
+TinAlipay::Payment.create_direct_pay_pc_url(options)
 
 If you use MOBILE url:
   	options={
@@ -44,18 +44,18 @@ If you use MOBILE url:
 
 #you can directly redirect_to this url
 
-"TinAlipay::Payment.create_direct_pay_mobile_url(options)" 
+TinAlipay::Payment.create_direct_pay_mobile_url(options)
 
 4: To verify return params of the pc&mobile.
 
-	PC: 
+PC: 
 
-	TinAlipay::Notify.verify?(return_params)
+TinAlipay::Notify.verify?(return_params)
 
-	MOBILE:
+MOBILE:
 
 
-	TinAlipay::Notify::Mobile.verify?(return_params)
+TinAlipay::Notify::Mobile.verify?(return_params)
 
 
 
