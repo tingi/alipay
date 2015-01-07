@@ -1,3 +1,51 @@
 = TinAlipay
 
 This project rocks and uses MIT-LICENSE.
+
+#this gem for alipay "create_direct_pay_by_user"
+
+1: add gem to your gemfile.
+
+gem 'tin-alipay', '2.3.0' 
+bundle 
+
+2: Config your alipay.
+
+  TinAlipay.pid = 'alipay_pid'
+  TinAlipay.key = 'alipay_key'
+  TinAlipay.seller_email = '107191613@qq.com'
+
+3: To pay money you should get alipay url.
+
+If you use PC url:
+    options = {
+      :out_trade_no      => '1',
+      :subject           => 'your subject',
+      :price             => '0.01',
+      :quantity          => 1,
+      :notify_url        => 'http://www.yoursite.com/notify_call_back', 
+	  :return_url        => 'http://www.yoursite.com/call_back'  
+    }
+you can directly redirect_to "TinAlipay::Payment.create_direct_pay_pc_url(options)" url
+
+If you use MOBILE url:
+  	options={
+  		:req_data => {
+        :out_trade_no  => '1',
+        :subject       => 'your subject',
+        :total_fee     => '0.01',
+        :notify_url    => "http://www.yoursite.com/notify_call_back",
+        :call_back_url => 'http://www.yoursite.com/call_back'
+        }}
+
+you can directly redirect_to "TinAlipay::Payment.create_direct_pay_mobile_url(options)" url
+
+4: To verify params of the pc&mobile.
+
+PC:
+TinAlipay::Notify.verify?(return_params)
+MOBILE:
+TinAlipay::Notify::Mobile.verify?(return_params)
+
+
+#if you have some troble when use this gem,to email me.
