@@ -1,11 +1,12 @@
 = TinAlipay
 
+This project rocks and uses MIT-LICENSE.
 
 #this gem for alipay "create_direct_pay_by_user"
 
 1: add gem to your gemfile.
 
-gem 'tin-alipay', '2.3.0' 
+gem 'tin-alipay', '2.4.1' 
 bundle 
 
 2: Config your alipay.
@@ -22,8 +23,8 @@ If you use PC url:
 	      :subject           => 'your subject',
 	      :price             => '0.01',
 	      :quantity          => 1,
-	      :notify_url        => 'http://www.yoursite.com/notify_call_back',
-		  :return_url        => 'http://www.yoursite.com/call_back'  
+	      :return_url        => 'http://www.yoursite.com/call_back' ,
+	      :notify_url        => 'http://www.yoursite.com/notify_call_back'
 	    }
 
 you can directly redirect_to "TinAlipay::Payment.create_direct_pay_pc_url(options)" url
