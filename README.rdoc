@@ -60,4 +60,4 @@ TinAlipay::Notify::Mobile.verify?(return_params)
 
 
 
-#if you have some troble when use this gem,to email me.
+#if you have some troble when use this gem,to email me...
